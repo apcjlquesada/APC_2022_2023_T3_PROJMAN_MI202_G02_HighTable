@@ -18,8 +18,8 @@ function resend_email_verify($name,$email,$verify_token){
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->Username   = 'chubbygourmetshop@gmail.com';                     //SMTP username
-    $mail->Password   = 'nxmibaqzxolrmnzn';                               //SMTP password
+    $mail->Username   = 'email@gmail.com';                     //SMTP username
+    $mail->Password   = 'password';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;       
 
