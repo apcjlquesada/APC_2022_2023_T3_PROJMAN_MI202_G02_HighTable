@@ -1,0 +1,117 @@
+* {
+    scroll-behavior: smooth;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+@media print {
+    body *{
+        visibility: hidden;
+    }
+    .print-container, .print-container * {
+        visibility: visible;
+    }
+	.print-hide, .print-hide * {
+		visibility: hidden;
+	}
+    .print-head{
+        visibility: visible;
+        position: fixed;
+        top: 0.5%;
+        left: 2%;
+        float: inline-start;
+    }
+    .print-text{
+        position: fixed;
+        top: 0;
+        right: 2%;
+        margin-bottom: 10px;
+    }
+	.print-container {
+		position: absolute;
+		top: 5%;
+        left: 0;
+	}
+}
+
+#sidenav-main{
+    background-color: #fff;
+}
+
+.form-control{
+    border: 1px solid #b3a1a1 !important;
+    padding: 8px 10px;
+}
+.text-head{
+    font-size: 20px;
+}
+
+.card td img{
+    border-radius: 0.5rem;
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+}
+
+.question-bold{
+    font-weight: bold;
+}
+
+.ov-hidden{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+/* change password */
+.control-label {
+    text-align: left !important;
+    padding-bottom: 4px;
+}
+.progress {
+    height: 3px !important;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.progress-bar-danger {
+    background-color: #e90f10;
+}
+.progress-bar-warning{
+    background-color: #ffad00;
+}
+.progress-bar-success{
+    background-color: #02b502;
+}
+.fa-circle{
+    font-size: 6px;  
+}
+.fa-check{
+    color: #02b502;
+}
+#popover-password{
+	display: none;
+}
+.border{
+    border-radius: 0.5rem;
+}
+textarea{
+    resize: none;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	width: 100%;
+}
+.name{
+    white-space: nowrap; 
+    width: 10px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #000000;
+}
+.orderCard{
+    width: 1430px;
+}
