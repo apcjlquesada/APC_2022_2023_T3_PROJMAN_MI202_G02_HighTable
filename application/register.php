@@ -120,7 +120,7 @@ include('includes/header.php');
                                 <div class="col-md-6">
                                             <div class="col-md-12">
                                                     <label for="exampleInputEmail1" class="form-label mb-0">Email address</label>
-                                                    <input type="email" required name="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" pattern="^[a-zA-Z0-9$&+,:;=?@#|'<>.-^*()%!]+@gmail\.com$" placeholder="@gmail.com">
+                                                    <input type="email" required name="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp"> <!--pattern="^[a-zA-Z0-9$&+,:;=?@#|'<>.-^*()%!]+@gmail\.com$" -->
                                             </div>
                                             <div class="col-md-12">
                                                     <label class="col-md-12 control-label" for="passwordinput">
@@ -173,7 +173,7 @@ include('includes/header.php');
                                             </div>
                                             Kindly read and agree with our <span><button type="button" class="btn btn-primary termsCondition" data-bs-toggle="modal" data-bs-target="#terms">Terms and Conditions</button></span> and <span><button type="button" class="btn btn-primary termsCondition" data-bs-toggle="modal" data-bs-target="#data-privacy">Privacy Policy</button></span> before registering.
                                             <small class="text-danger alert"></small>
-                                            <br><button type="submit" name="register_btn" class="btn btn-primary mb-2 mt-2 col-md-3 btn-green">Register</button>
+                                            <br><button type="submit" name="register_btn" class="btn btn-primary mb-2 mt-2 col-md-3 btn-green" id="registerbtn" disabled="true">Register</button>
                                             <div class="accountReady">
                                                 <h7>Already have an account? <span class="registerSpan"><a href="login.php">Login here</a></span></h3>
                                             </div>
@@ -258,7 +258,7 @@ include('includes/header.php');
                                                 </p>
                                                 <h5>Your Consent</h5>
                                                 <p>
-                                                We’ve updated our Terms & Conditions to provide you with complete transparency into what is being set when you visit our site and how it’s being used. By using our service, registering an account, or making a purchase, you hereby consent to our Terms & Conditions and the Privacy Act Policy.
+                                                We`ve updated our Terms & Conditions to provide you with complete transparency into what is being set when you visit our site and how it’s being used. By using our service, registering an account, or making a purchase, you hereby consent to our Terms & Conditions and the Privacy Act Policy.
                                                 </p>
                                                 <h5>Links to Other Websites</h5>
                                                 <p>
@@ -357,7 +357,7 @@ include('includes/header.php');
                                                 </p>
                                                 <h5>Binding Arbitration</h5>
                                                 <p>
-                                                If you and us don’t resolve any dispute by informal negotiation, any other effort to resolve the dispute will be conducted exclusively by binding arbitration as described in this section. You are giving up the right to litigate (or participate in as a party or class member) all disputes in court before a judge or jury. The dispute shall be settled by binding arbitration in accordance with the Alternative Dispute Resolution Act of 2004 and the Model Law. Either party may seek any interim or preliminary injunctive relief from any court of competent jurisdiction, as necessary to protect the party’s rights or property pending the completion of arbitration. Any and all legal, accounting, and other costs, fees, and expenses incurred by the prevailing party shall be borne by the non-prevailing party. 
+                                                If you and us don`t resolve any dispute by informal negotiation, any other effort to resolve the dispute will be conducted exclusively by binding arbitration as described in this section. You are giving up the right to litigate (or participate in as a party or class member) all disputes in court before a judge or jury. The dispute shall be settled by binding arbitration in accordance with the Alternative Dispute Resolution Act of 2004 and the Model Law. Either party may seek any interim or preliminary injunctive relief from any court of competent jurisdiction, as necessary to protect the party’s rights or property pending the completion of arbitration. Any and all legal, accounting, and other costs, fees, and expenses incurred by the prevailing party shall be borne by the non-prevailing party. 
                                                 </p>
                                                 <h5>Submissions and Privacy</h5>
                                                 <p>
@@ -392,13 +392,13 @@ include('includes/header.php');
                                                  </p>
                                                 <h5>Contact Us</h5>
                                                 
-                                                Don’t Hesitate to contact us if you have any questions. <br>
+                                                Don`t Hesitate to contact us if you have any questions. <br>
                                                 Via Email: priscillamariano403@gmail.com <br>
-                                                Via Phone Number: (63) XXX XXX XXXX <br>
+                                                Via Phone Number: (63) 917 234 5688 <br>
 
                                                     <br>
                                                     <br>
-                                                    <center><input class="form-check-input" type="checkbox" name="check" id="agree" required/> I agree on the Terms and Conditions.</center>
+                                                    <center><input class="form-check-input" type="checkbox" name="check" id="agree" onclick="enable()" required/> I agree on the Terms and Conditions.</center>
                                                 </div>
                                                 </div>
                                             </div>
@@ -471,7 +471,7 @@ include('includes/header.php');
                                                     <br>iv.	to access the Information and/or Personal Data; <br>
                                                     v.	to suspend, withdraw or order the blocking, removal or destruction of the Data Subject's Personal Data from CG database system.<br>
                                                     </p>
-                                                        <center><input class="form-check-input" type="checkbox" name="check" id="agree2" required/> I agree on the Privacy Policy.</center>
+                                                        <center><input class="form-check-input" type="checkbox" name="check" id="agree2" onclick="enable()" required/> I agree on the Privacy Policy.</center>
 
                                                     </div>
                                                 </div>

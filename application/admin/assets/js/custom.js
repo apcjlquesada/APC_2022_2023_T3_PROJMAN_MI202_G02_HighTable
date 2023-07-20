@@ -186,3 +186,4 @@ $dateCond = "DATE(date) >= '{$_GET['date1']}' AND DATE(date) <= '{$_GET['date2']
 }
 
 });
+

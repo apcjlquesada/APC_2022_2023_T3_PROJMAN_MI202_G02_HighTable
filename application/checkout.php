@@ -46,20 +46,20 @@ use PHPMailer\PHPMailer\Exception;
                             <hr>
                             <div class="row">
                                 <div class="col-md-6 mb-2">
-                                    <label class="form-label mb-0">First Name</label>
+                                    <label class="form-label mb-0">First Name<span class="text-danger">*</span></label>
                                     <input type="text" name="first_name" id="first_name" class="form-control" value="<?= $row["first_name"] ?>" required>
                                     
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <label class="form-label mb-0">Last Name</label>
+                                    <label class="form-label mb-0">Last Name<span class="text-danger">*</span></label>
                                     <input type="text" name="last_name" id="last_name" class="form-control" value="<?= $row["last_name"] ?>">
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <label class="form-label mb-0">Email</label>
+                                    <label class="form-label mb-0">Email<span class="text-danger">*</span></label>
                                     <input type="email" name="email" id="email" class="form-control" value="<?= $row["email"] ?>">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="form-label mb-0">Contact Number</label>
+                                    <label class="form-label mb-0">Contact Number<span class="text-danger">*</span></label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">+63</div>
@@ -120,7 +120,7 @@ use PHPMailer\PHPMailer\Exception;
                                     <label class="form-label mb-0">Zip Code</label>
                                     <input type="text" name="postal_code" id="postal_code" class="form-control mb-2" maxlength="4" pattern="[0-9]{4}" value="<?= $row['postal_code'] ?>">
                                 </div>-->
-                                <label class="form-label mb-0">Address<a href="my-profile.php" class="float-end manageAddress">Manage Address</a></label>
+                                <label class="form-label mb-0">Address<span class="text-danger">*</span><a href="my-profile.php" class="float-end manageAddress">Manage Address</a></label>
                                 
 
                                 <div class="accordion mt-2 mb-3" id="accordionExample">
@@ -137,7 +137,7 @@ use PHPMailer\PHPMailer\Exception;
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <input class="form-check-input m-1" type="radio" name="option" value="<?= $item['delivery_fee']?>, <?= $item['region']?>, <?= $item['province']?>, <?= $item['city']?>, <?= $item['barangay']?>, <?= $item['house_number']?>, <?= $item['street']?>, <?= $item['landmark']?>, <?= $item['postal_code']?>" id="option1" class="m-1" checked/><?= $item['address_name']?>
+                                        <input class="form-check-input m-1" type="radio" name="option" value="<?= $item['delivery_fee']?>,<?= $item['region']?>,<?= $item['province']?>,<?= $item['city']?>,<?= $item['barangay']?>,<?= $item['house_number']?>,<?= $item['street']?>,<?= $item['landmark']?>,<?= $item['postal_code']?>" id="option1" class="m-1" checked/><?= $item['address_name']?>
                                         </button>
                                         </h2>
                                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -145,13 +145,14 @@ use PHPMailer\PHPMailer\Exception;
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <label class="form-label mb-0">Region</label>
-                                                        <div class="border p-2 mb-2">
+                                                        
+                                                        <div class="border p-2 mb-2" id="region">
                                                         <?= $item['region']; ?>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label class="form-label mb-0">Province</label>
-                                                        <div class="border p-2 mb-2">
+                                                        <div class="border p-2 mb-2" id="province">
                                                         <?= $item['province']; ?>
                                                         </div>
                                                     </div>
@@ -200,7 +201,7 @@ use PHPMailer\PHPMailer\Exception;
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="heading<?php echo $item['id']; ?>">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $item['id']; ?>" aria-expanded="false" aria-controls="collapse<?php echo $item['id']; ?>">
-                                            <input class="form-check-input m-1" type="radio" name="option" value="<?= $item['delivery_fee']?>, <?= $item['region']?>, <?= $item['province']?>, <?= $item['city']?>, <?= $item['barangay']?>, <?= $item['house_number']?>, <?= $item['street']?>, <?= $item['landmark']?>, <?= $item['postal_code']?>" id="option<?php echo $item['id']; ?>" class="m-1" /><?= $item['address_name']; ?>
+                                            <input class="form-check-input m-1" type="radio" name="option" value="<?= $item['delivery_fee']?>,<?= $item['region']?>,<?= $item['province']?>,<?= $item['city']?>,<?= $item['barangay']?>,<?= $item['house_number']?>,<?= $item['street']?>,<?= $item['landmark']?>,<?= $item['postal_code']?>" id="option<?php echo $item['id']; ?>" class="m-1" /><?= $item['address_name']; ?>
                                             </button>
                                             </h2>
                                             <div id="collapse<?php echo $item['id'] ?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $item['id'] ?>" data-bs-parent="#accordionExample">
@@ -208,13 +209,13 @@ use PHPMailer\PHPMailer\Exception;
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <label class="form-label mb-0">Region</label>
-                                                            <div class="border p-2 mb-2">
+                                                            <div class="border p-2 mb-2" id="region">
                                                             <?= $item['region']; ?>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label class="form-label mb-0">Province</label>
-                                                            <div class="border p-2 mb-2">
+                                                            <div class="border p-2 mb-2" id="province">
                                                             <?= $item['province']; ?>
                                                             </div>
                                                         </div>
@@ -269,12 +270,12 @@ use PHPMailer\PHPMailer\Exception;
                                 
                                 
                                 <div class="col-md-6 mb-2">
-                                    <label class="form-label mb-0">Delivery Date</label>
+                                    <label class="form-label mb-0">Delivery Date<span class="text-danger">*</span></label>
                                     <input type="date"  name="delivery_date" id="delivery_date" class="form-control" required />
                                     <small class="text-danger delivery_date"></small>
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <label class="form-label mb-0">Delivery Time</label>
+                                    <label class="form-label mb-0">Delivery Time<span class="text-danger">*</span></label>
                                     <input type="time"  name="time" id="time" class="form-control" min="09:00" max="19:00" required />
                                     <small class="text-danger time"></small>
                                 </div>
@@ -311,7 +312,7 @@ use PHPMailer\PHPMailer\Exception;
                                                         <h6>Instruction</h6>
                                                         <p>GCash Account Name: Priscilla Mariano</p>
                                                         <p>GCash Account Number: 09123456789</p>
-                                                        <label class="form-label mb-0">Reference Number</label>
+                                                        <label class="form-label mb-0">Reference Number<span class="text-danger">*</span></label>
                                                         <input type="text"  name="payment_id" class="form-control mb-2" maxlength="13" pattern="[0-9]{13}" required>
                                                     </div>
                                                     <div class="">
@@ -449,19 +450,23 @@ use PHPMailer\PHPMailer\Exception;
 
   paypal.Buttons({
         onClick(){
+            let radioBtns = document.querySelectorAll("input[name='option']");
+            let selected = document.querySelector("input[name='option']:checked").value;
+            let selectedArray = selected.split(",");
             console.log("click");
             var first_name = $('#first_name').val();
             var last_name = $('#last_name').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
-            var region = $('#region').val();
-            var province = $('#province').val();
-            var city = $('#city').val();
-            var barangay = $('#barangay').val();
-            var house_number = $('#house_number').val();
-            var street = $('#street').val();
-            var landmark = $('#landmark').val();
-            var postal_code = $('#postal_code').val();
+            var region =  `${selectedArray[1]}`;
+            var province = `${selectedArray[2]}`;
+            var city = `${selectedArray[3]}`;
+            var barangay = `${selectedArray[4]}`;
+            var house_number = `${selectedArray[5]}`;
+            var street = `${selectedArray[6]}`;
+            var landmark = `${selectedArray[7]}`;
+            var postal_code = `${selectedArray[8]}`;
+            var delivery_fee = `${selectedArray[0]}`;
             var delivery_date = $('#delivery_date').val();
             var time = $('#time').val();
             var comments = $('#comments').val();
@@ -486,7 +491,7 @@ use PHPMailer\PHPMailer\Exception;
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: totalPrice.textContent // Can also reference a variable or function
+              value: dfee // Can also reference a variable or function
             }
           }]
         });
@@ -499,21 +504,30 @@ use PHPMailer\PHPMailer\Exception;
           //console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
           const transaction = orderData.purchase_units[0].payments.captures[0];
           //alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+            let radioBtns = document.querySelectorAll("input[name='option']");
+            let selected = document.querySelector("input[name='option']:checked").value;
+            let totals = document.getElementById("totalPrice");
+            let totalPrice = document.getElementById("overallPrice").value;
+
+            let selectedArray = selected.split(",");
             var first_name = $('#first_name').val();
             var last_name = $('#last_name').val();
             var email = $('#email').val();
             var phone = $('#phone').val();
-            var region = $('#region').val();
-            var province = $('#province').val();
-            var city = $('#city').val();
-            var barangay = $('#barangay').val();
-            var house_number = $('#house_number').val();
-            var street = $('#street').val();
-            var landmark = $('#landmark').val();
-            var postal_code = $('#postal_code').val();
+            var region =  `${selectedArray[1]}`;
+            var province = `${selectedArray[2]}`;
+            var city = `${selectedArray[3]}`;
+            var barangay = `${selectedArray[4]}`;
+            var house_number = `${selectedArray[5]}`;
+            var street = `${selectedArray[6]}`;
+            var landmark = `${selectedArray[7]}`;
+            var postal_code = `${selectedArray[8]}`;
+            var delivery_fee = `${selectedArray[0]}`;
             var delivery_date = $('#delivery_date').val();
             var time = $('#time').val();
             var comments = $('#comments').val();
+            var total_price = dfee.toFixed(2);
+            console.log(total_price);
 
             var data = {
                 'first_name': first_name,
@@ -528,14 +542,16 @@ use PHPMailer\PHPMailer\Exception;
                 'street': street,
                 'landmark': landmark,
                 'postal_code': postal_code,
+                'delivery_fee': delivery_fee,
                 'delivery_date': delivery_date,
                 'time': time,
                 'payment_mode': "PayPal",
                 'payment_id': transaction.id,
                 'placeOrderBtn': true,
                 'comments': comments,
+                'overallPrice': total_price
             };
-
+            console.log(data);
             $.ajax({
                 type: "POST",
                 url: "functions/placeorder.php",

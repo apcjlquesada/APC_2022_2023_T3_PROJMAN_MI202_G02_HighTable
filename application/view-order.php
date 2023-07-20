@@ -223,7 +223,7 @@ $data = mysqli_fetch_array($orderData);
                                         </tbody>
                                     </table>
                                     <h7>Subtotal <span class="float-end fw-bold" id="subtotal">₱ <?= number_format($data['subtotal_price'],2); ?></span></h7>
-                                    <br><h7>Delivery Fee <span class="float-end fw-bold" id="fee"></span></h7>
+                                    <br><h7>Delivery Fee <span class="float-end fw-bold" id="fee">₱ <?= number_format($data['delivery_fee'],2); ?></span></h7>
                                     <hr>
                                     <h5 class="fw-bold">Total (VAT Included) <span class="float-end fw-bold">₱ <?= number_format($data['total_price'],2); ?></span></h5>
                                     

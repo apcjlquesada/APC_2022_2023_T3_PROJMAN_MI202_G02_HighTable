@@ -29,8 +29,29 @@ foreach($query as $item){
 ?>
 
 <div class="container mt-5">
+    
     <div class="row">
+        <div class="col-lg-4 col-sm-5">
+          <div class="card mb-4">
+              <div class="card-header p-3 pt-2">
+                  <div class="text-end pt-1">
+                    <p class="text-md mb-3 text-capitalize">Today's Dashboard</p>
+                    <h5 class="mb-0">
+                    <span class="mb-5" id='date-time' ></span>
+                    </h5>
+                  </div>
+              </div>
+              <hr class="dark horizontal my-0">
+              <div class="card-footer p-3">
+                <!-- <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p> -->
+              </div>
+          </div>
+        </div>
         <div class="col-md-12">
+            <div class="col-md-8">
+              
+            </div>
+          </div>
           <!-- <div class="row mt-4">
             <div class="col-lg-7 position-relative z-index-2">
                     <div class="card card-plain mb-4">
@@ -332,3 +353,8 @@ foreach($query as $item){
 </div>
 
 <?php include('includes/footer.php'); ?>
+
+<script>
+var dt = new Date();
+document.getElementById('date-time').innerHTML=dt;
+</script>

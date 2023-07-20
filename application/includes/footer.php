@@ -97,7 +97,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4 text-white">
-    © 2021 Copyright
+    © 2023 Copyright
     <a class="fw-bold">HighTable</a>
   </div>
   <!-- Copyright -->
@@ -292,7 +292,7 @@
       <h5>Contact Us</h5>
       Don’t Hesitate to contact us if you have any questions. <br>
       Via Email: priscillamariano403@gmail.com <br>
-      Via Phone Number: (63) XXX XXX XXXX <br>
+      Via Phone Number: (63) 917 234 5688 <br>
     </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -553,22 +553,23 @@ function checkStrength(password) {
 }
 </script>
 
-
-<script>
-  function showDeliveryFee(){
-    var feeresult = document.getElementById("fee");
-    var ncrfee = 150;
-    var lagunafee = 110;
-    
-    if('<?= $data['region']; ?>' == "NATIONAL CAPITAL REGION (NCR)"){
-      feeresult.textContent = "₱ " + ncrfee.toFixed(2);
-    }else{
-      feeresult.textContent = "₱ " + lagunafee.toFixed(2);
-      
-    }
-  }
-  showDeliveryFee();
-</script>
-
     </body>
 </html>
+
+<script>
+//register checkbox button
+
+function enable(){
+  var check1 = document.getElementById("agree");
+  var check2 = document.getElementById("agree2");
+  var btn = document.getElementById("registerbtn");
+
+  if(check1.checked && check2.checked){
+    btn.removeAttribute("disabled");
+  }
+  else{
+    btn.disabled = "true";
+  }
+}
+
+</script>

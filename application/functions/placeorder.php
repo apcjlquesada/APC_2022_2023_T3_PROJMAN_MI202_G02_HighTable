@@ -16,23 +16,16 @@ if(isset($_SESSION['auth']))
         $last_name = mysqli_real_escape_string($con, $_POST['last_name']);
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $phone = mysqli_real_escape_string($con, $_POST['phone']);
-        //$delivery_fee = mysqli_real_escape_string($con, $_POST['delivery_fee']);
-        //$region = mysqli_real_escape_string($con, $_POST['region']);
-        //$province = mysqli_real_escape_string($con, $_POST['province']);
-        //$city = mysqli_real_escape_string($con, $_POST['city']);
-        //$barangay = mysqli_real_escape_string($con, $_POST['barangay']);
-        //$house_number = mysqli_real_escape_string($con, $_POST['house_number']);
-        //$street = mysqli_real_escape_string($con, $_POST['street']);
-        //$landmark = mysqli_real_escape_string($con, $_POST['landmark']);
-        //$postal_code = mysqli_real_escape_string($con, $_POST['postal_code']);
+        
         $delivery_date = mysqli_real_escape_string($con, $_POST['delivery_date']);
         $time = mysqli_real_escape_string($con, $_POST['time']);
         $payment_mode = mysqli_real_escape_string($con, $_POST['payment_mode']);
         $payment_id = mysqli_real_escape_string($con, $_POST['payment_id']);
         $comments = mysqli_real_escape_string($con, $_POST['comments']);
-        $totalPrice = mysqli_real_escape_string($con, $_POST['overallPrice']);
+        $totalPrice = mysqli_real_escape_string($con, $_POST['overallPrice']);            
 
-            // split into comma separate array
+            if($payment_mode == "GCash"){
+                // split into comma separate array
             $option = explode(",", $_POST['option']);
                     
             // get value at first index
@@ -47,6 +40,19 @@ if(isset($_SESSION['auth']))
             $street = $option[6];
             $landmark = $option[7];
             $postal_code = $option[8];
+            }else{
+                $delivery_fee = mysqli_real_escape_string($con, $_POST['delivery_fee']);
+                $region = mysqli_real_escape_string($con, $_POST['region']);
+                $province = mysqli_real_escape_string($con, $_POST['province']);
+                $city = mysqli_real_escape_string($con, $_POST['city']);
+                $barangay = mysqli_real_escape_string($con, $_POST['barangay']);
+                $house_number = mysqli_real_escape_string($con, $_POST['house_number']);
+                $street = mysqli_real_escape_string($con, $_POST['street']);
+                $landmark = mysqli_real_escape_string($con, $_POST['landmark']);
+                $postal_code = mysqli_real_escape_string($con, $_POST['postal_code']);
+            }
+
+
         if($first_name == "" || $email == "" || $phone == ""){
             $_SESSION['message'] = "All fields are mandatory";
             header('Location: ../checkout.php');
@@ -107,12 +113,12 @@ require '../vendor/autoload.php';
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 
                 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                $mail->Username   = 'email@gmail.com';                     //SMTP username
-                $mail->Password   = 'password';                               //SMTP password
+                $mail->Username   = 'rysalw4m@gmail.com';                     //SMTP username
+                $mail->Password   = 'miawearustjppfkt';                               //SMTP password
                 $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
                 $mail->Port       = 587;       
 
-                $mail->setFrom('chubbygourmetshop@gmail.com');
+                $mail->setFrom('rysalw4m@gmail.com');
                 $mail->addAddress($email);     //Add a recipient
 
                 $mail->isHTML(true);                                  //Set email format to HTML
@@ -166,7 +172,7 @@ require '../vendor/autoload.php';
                                 color: #fff;
                                 padding: 0.5rem;
                                 border-radius: 0.5rem;
-                                text-decoration: none;' class='email-password-btn' href='http://localhost/CG-Webapp/CG-Webapp-main/my-orders.php'>View My Orders</a>
+                                text-decoration: none;' class='email-password-btn' href='http://localhost/High-Table/High-Table-master/CG-Webapp-main/my-orders.php'>View My Orders</a>
                             </div>
                             <p class='m-4' style='color:black;'>Send us an email if you have other concerns. We are willing to help!</h6>
                             <p class='m-4' style='color:black;'>Cheers,</h6>
@@ -193,12 +199,12 @@ require '../vendor/autoload.php';
                 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 
                 $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-                $mail->Username   = 'email@gmail.com';                     //SMTP username
-                $mail->Password   = 'password';                               //SMTP password
+                $mail->Username   = 'rysalw4m@gmail.com';                     //SMTP username
+                $mail->Password   = 'miawearustjppfkt';                               //SMTP password
                 $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
                 $mail->Port       = 587;       
 
-                $mail->setFrom('chubbygourmetshop@gmail.com');
+                $mail->setFrom('rysalw4m@gmail.com');
                 $mail->addAddress($email);     //Add a recipient
 
                 $mail->isHTML(true);                                  //Set email format to HTML
@@ -252,7 +258,7 @@ require '../vendor/autoload.php';
                                 color: #fff;
                                 padding: 0.5rem;
                                 border-radius: 0.5rem;
-                                text-decoration: none;' class='email-password-btn' href='http://localhost/CG-Webapp/CG-Webapp-main/my-orders.php'>View My Orders</a>
+                                text-decoration: none;' class='email-password-btn' href='http://localhost/High-Table/High-Table-master/CG-Webapp-main/my-orders.php'>View My Orders</a>
                             </div>
                             <p class='m-4' style='color:black;'>Send us an email if you have other concerns. We are willing to help!</h6>
                             <p class='m-4' style='color:black;'>Cheers,</h6>

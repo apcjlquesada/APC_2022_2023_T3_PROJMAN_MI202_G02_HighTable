@@ -307,12 +307,12 @@ else if(isset($_POST['update_order_btn'])){
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->Username   = 'email@gmail.com';                     //SMTP username
-    $mail->Password   = 'password';                               //SMTP password
+    $mail->Username   = 'rysalw4m@gmail.com';                     //SMTP username
+    $mail->Password   = 'miawearustjppfkt';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;       
 
-    $mail->setFrom('chubbygourmetshop@gmail.com');
+    $mail->setFrom('rysalw4m@gmail.com');
     $mail->addAddress($email);     //Add a recipient
 
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -377,7 +377,7 @@ else if(isset($_POST['update_order_btn'])){
                     color: #fff;
                     padding: 0.5rem;
                     border-radius: 0.5rem;
-                    text-decoration: none;' class='email-password-btn' href='http://localhost/CG-Webapp/CG-Webapp-main/my-orders.php'>View My Orders</a>
+                    text-decoration: none;' class='email-password-btn' href='http://localhost/High-Table/High-Table-master/CG-Webapp-main/my-orders.php'>View My Orders</a>
                 </div>
                 <p class='m-4' style='color:black;'>Send us an email if you have other concerns. We are willing to help!</h6>
                 <p class='m-4' style='color:black;'>Cheers,</h6>

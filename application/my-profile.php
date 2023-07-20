@@ -76,8 +76,9 @@ if(mysqli_num_rows($query_run) > 0){
                                         <div class="col-md-6">
                 
                                             <div class="border p-2 mb-2">
-                                              <?= $item['address_name']; ?>
+                                              <?= $item['address_name']; ?> 
                                              <a href="editUserAddress.php?id=<?= $item['id'] ?>" class="float-end"><i class="fa-solid fa-pen-to-square"></i></a>
+       
                                             </div>
                                             
                                         </div>

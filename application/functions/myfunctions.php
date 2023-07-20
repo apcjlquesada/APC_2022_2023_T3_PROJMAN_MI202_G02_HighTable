@@ -40,7 +40,7 @@ function getArchiveAddress(){
 
 function getTodaysOrders(){
     global $con;
-    $query = "SELECT o.*, u.first_name, u.last_name FROM orders o, user u WHERE status='0' AND DAY(date)=day(curdate()) AND o.user_id=u.id";
+    $query = "SELECT o.*, u.first_name, u.last_name FROM orders o, user u WHERE status='0' AND date=curdate() AND o.user_id=u.id";
     return $query_run = mysqli_query($con, $query);
 }
 

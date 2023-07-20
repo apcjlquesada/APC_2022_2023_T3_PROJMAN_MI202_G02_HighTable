@@ -19,12 +19,12 @@ function sendemail_verify($first_name,$email,$verify_token){
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
 
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-    $mail->Username   = 'email@gmail.com';                     //SMTP username
-    $mail->Password   = 'password';                               //SMTP password
+    $mail->Username   = 'rysalw4m@gmail.com';                     //SMTP username
+    $mail->Password   = 'miawearustjppfkt';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;       
 
-    $mail->setFrom('chubbygourmetshop@gmail.com', $first_name);
+    $mail->setFrom('rysalw4m@gmail.com');
     $mail->addAddress($email);     //Add a recipient
 
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -73,7 +73,7 @@ function sendemail_verify($first_name,$email,$verify_token){
                 color: #fff;
                 padding: 0.5rem;
                 border-radius: 0.5rem;
-                text-decoration: none;' class='email-password-btn' href='http://localhost/CG-Webapp/CG-Webapp-main/verify-email.php?token=$verify_token'>Verify Email Address</a>
+                text-decoration: none;' class='email-password-btn' href='http://localhost/High-Table/High-Table-master/CG-Webapp-main/verify-email.php?token=$verify_token'>Verify Email Address</a>
             </div>
             <p class='m-4' style='color:black;'>Send us an email if you have other concerns. We are willing to help!</h6>
             <p class='m-4' style='color:black;'>Cheers,</h6>
@@ -136,7 +136,7 @@ if(isset($_POST['register_btn'])){
             $insert_address_query_run = mysqli_query($con,$insert_address_query);
     
             if($insert_query_run && $insert_address_query_run){
-                sendemail_verify("$name","$email","$verify_token");
+                sendemail_verify("$first_name","$email","$verify_token");
                 $_SESSION['message'] = "Registered Successfully! Please verify your email address";
                 header('Location: ../login.php');
             }
