@@ -1,9 +1,9 @@
 <?php
 
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "chubbygourmetdb";
+    $servername = "192.168.150.213";
+    $username = "mi202g02hightable";
+    $password = "mi202g02hightable";
+    $database = "mi202g02hightable";
 
     //Creating database connection
     $con = mysqli_connect($host, $username, $password, $database);
